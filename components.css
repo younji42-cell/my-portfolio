@@ -200,7 +200,7 @@
 .bento__label {
   font-size: 10px; opacity: .5; letter-spacing: .14em; margin-bottom: 12px;
 }
-.bento__lead { font-size: 16px; line-height: 1.7; margin: 0 0 24px; max-width: 62ch; }
+.bento__lead { font-size: 16px; line-height: 1.7; margin: 0 0 24px; max-width: none; }
 .bento__lead strong { color: var(--primary); font-weight: 600; }
 .bento__lead-break { display: block; height: 10px; }
 .bento__card-head { display: flex; justify-content: space-between; align-items: center; }
@@ -1104,4 +1104,147 @@
 .footer__inner {
   display: flex; justify-content: space-between; align-items: center; gap: var(--s-4);
   flex-wrap: wrap;
+}
+/* ─────────────────────────────────────────────────────────────
+   Playground — 토큰 파이프라인 추가 CSS
+   기존 components.css 하단에 붙여넣으세요
+   ───────────────────────────────────────────────────────────── */
+
+/* ── 파이프라인 스텝 네비게이션 ── */
+.pg-pipe-steps {
+  display: flex; align-items: stretch;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-xl); overflow: hidden;
+  background: var(--bg-elev);
+  margin-bottom: var(--s-4);
+}
+.pg-pipe-step {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 3px;
+  padding: 14px 8px; cursor: pointer; border: none;
+  background: transparent; color: var(--fg-muted);
+  font-family: inherit; font-size: 12px;
+  border-right: 1px solid var(--border);
+  transition: all .25s;
+}
+.pg-pipe-step:last-child { border-right: none; }
+.pg-pipe-step:hover { background: var(--bg-muted); color: var(--fg); }
+.pg-pipe-step.is-active { background: var(--primary); color: var(--primary-fg); }
+.pg-pipe-step.is-active .pg-pipe-step__num { opacity: .7; }
+.pg-pipe-step__num { font-size: 10px; opacity: .5; }
+.pg-pipe-step__en { font-size: 12px; font-weight: 600; }
+.pg-pipe-step__ko { font-size: 10px; opacity: .6; letter-spacing: .04em; }
+
+/* ── 파이프라인 패널 ── */
+.pg-pipe-panel {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: var(--s-8);
+  min-height: 420px;
+}
+
+/* ── Figma Variables 그리드 ── */
+.pg-fig-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3);
+}
+.pg-fig-group {
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  border-radius: var(--r-lg); overflow: hidden;
+}
+.pg-fig-group__head {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+}
+.pg-fig-group__dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+.pg-fig-group__title { font-size: 10px; letter-spacing: .1em; color: var(--fg-muted); }
+.pg-fig-group__body { padding: 10px 14px; display: flex; flex-direction: column; gap: 7px; }
+
+.pg-figvar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px;
+}
+.pg-figvar__name { font-size: 11px; color: var(--fg-muted); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pg-figvar__val { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.pg-figvar__text { font-size: 10px; color: var(--fg-muted); }
+.pg-figvar__type { font-size: 12px; color: var(--fg); }
+
+.pg-swatch {
+  width: 14px; height: 14px; border-radius: 3px;
+  border: 1px solid var(--border-strong); flex-shrink: 0;
+}
+.pg-spacing-bar {
+  height: 8px; background: oklch(56% 0.14 232 / .4);
+  border-radius: 2px;
+}
+.pg-radius-swatch {
+  border: 1px solid var(--border-strong);
+  background: transparent; height: 14px; width: 24px;
+}
+
+/* ── Primitive — 컬러 스케일 ── */
+.pg-color-scale {
+  display: flex; gap: 3px;
+  border-radius: var(--r-md); overflow: hidden;
+}
+.pg-scale-stop {
+  flex: 1; height: 40px;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 5px; transition: transform .15s; cursor: default;
+}
+.pg-scale-stop:hover { transform: scaleY(1.1); z-index: 2; }
+.pg-scale-label { font-size: 9px; font-weight: 500; }
+
+.pg-accent-block {
+  flex: 1; height: 44px; border-radius: var(--r-md);
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 6px;
+}
+.pg-spacing-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+}
+
+/* ── Semantic 토큰 ── */
+.pg-sem-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.pg-sem-col-head {
+  font-size: 11px; letter-spacing: .1em; color: var(--fg-muted);
+  padding: 7px 12px; background: var(--bg-muted);
+  border-radius: var(--r-md); text-align: center;
+  margin-bottom: 10px;
+}
+.pg-sem-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+}
+.pg-sem-row:last-child { border-bottom: none; }
+
+/* ── Component 토큰 ── */
+.pg-comp-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.pg-comp-card {
+  background: var(--bg-sunken); border: 1px solid var(--border);
+  border-radius: var(--r-lg); overflow: hidden;
+}
+.pg-comp-card__head {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  font-size: 11px; letter-spacing: .1em; color: var(--fg-muted);
+}
+.pg-comp-card__body { padding: 14px; }
+.pg-comp-token-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 0; border-bottom: 1px solid var(--border);
+}
+.pg-comp-token-row:last-child { border-bottom: none; }
+
+/* ── 반응형 ── */
+@media (max-width: 900px) {
+  .pg-pipe-steps { flex-wrap: wrap; }
+  .pg-pipe-step  { flex: 1 1 40%; border-right: none; border-bottom: 1px solid var(--border); }
+  .pg-pipe-step:last-child { border-bottom: none; }
+  .pg-fig-grid   { grid-template-columns: 1fr; }
+  .pg-sem-split  { grid-template-columns: 1fr; }
+  .pg-comp-grid  { grid-template-columns: 1fr; }
 }
