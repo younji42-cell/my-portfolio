@@ -87,7 +87,7 @@ function Hero() {
           <div className="hero__description-label mono">— WHO AM I</div>
           <p>
             사람들이 <mark>무엇에 막히는지</mark>를 관찰하고,
-            그 니즈를 <mark>시스템으로</mark> 번역하며,
+            그 니즈를 <mark>시스템으로</mark> 번역하며,<br />
             끝내 <mark>제품으로</mark> 구현해내는 사람.
           </p>
           <p style={{color:'var(--fg-subtle)', fontSize:14}}>

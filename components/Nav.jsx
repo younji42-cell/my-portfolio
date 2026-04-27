@@ -20,10 +20,15 @@ function Nav({ sections, activeSection, dark, onToggleDark }) {
       <div className="nav__inner">
         <button className="nav__brand" onClick={() => window.scrollTo({top:0, behavior:'smooth'})}>
           <span className="nav__brand-mark" aria-hidden>
-            <svg viewBox="0 0 24 24" width="22" height="22">
-              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.4"/>
-              <path d="M4 14 Q8 10 12 14 T20 14" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/>
-            </svg>
+          <svg viewBox="0 0 24 24" width="22" height="22">
+            {/* 베지어 곡선 */}
+            <path d="M4 18 C4 18 8 4 12 12 C16 20 20 6 20 6"
+              fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* 앵커 포인트 */}
+            <circle cx="4"  cy="18" r="1.5" fill="currentColor"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            <circle cx="20" cy="6"  r="1.5" fill="currentColor"/>
+          </svg>
           </span>
           <span className="nav__brand-text">
             <span className="mono" style={{fontSize:11, opacity:.55, letterSpacing:'.14em'}}>YJ.LEE</span>

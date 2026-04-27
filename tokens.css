@@ -1,21 +1,21 @@
 /* ─────────────────────────────────────────────────────────────
    Design Tokens — Yunji Lee Portfolio
-   Deep Ocean Blue palette · Light/Dark
+   Deep blue Blue palette · Light/Dark
    ───────────────────────────────────────────────────────────── */
 
 :root {
-  /* Primitive — Ocean Blue Scale */
-  --ocean-50:  oklch(98% 0.012 230);
-  --ocean-100: oklch(95% 0.022 230);
-  --ocean-200: oklch(89% 0.04  230);
-  --ocean-300: oklch(80% 0.07  230);
-  --ocean-400: oklch(68% 0.11  230);
-  --ocean-500: oklch(56% 0.14  232);
-  --ocean-600: oklch(46% 0.14  235);
-  --ocean-700: oklch(36% 0.11  238);
-  --ocean-800: oklch(26% 0.08  240);
-  --ocean-900: oklch(18% 0.055 242);
-  --ocean-950: oklch(12% 0.04  244);
+  /* Primitive — blue Blue Scale */
+  --blue-50:  oklch(98% 0.012 230);
+  --blue-100: oklch(95% 0.022 230);
+  --blue-200: oklch(89% 0.04  230);
+  --blue-300: oklch(80% 0.07  230);
+  --blue-400: oklch(68% 0.11  230);
+  --blue-500: oklch(56% 0.14  232);
+  --blue-600: oklch(46% 0.14  235);
+  --blue-700: oklch(36% 0.11  238);
+  --blue-800: oklch(26% 0.08  240);
+  --blue-900: oklch(18% 0.055 242);
+  --blue-950: oklch(12% 0.04  244);
 
   /* Primitive — Neutral (cool slate) */
   --slate-0:   oklch(99.2% 0.003 230);
@@ -48,8 +48,8 @@
   --fg-inverse:   var(--slate-0);
   --border:       oklch(88% 0.008 230 / 0.7);
   --border-strong: oklch(78% 0.01 230);
-  --primary:      var(--ocean-700);
-  --primary-hover: var(--ocean-800);
+  --primary:      var(--blue-700);
+  --primary-hover: var(--blue-800);
   --primary-soft: oklch(95% 0.028 232);
   --primary-fg:   #ffffff;
   --ring:         oklch(56% 0.14 232 / 0.35);
@@ -88,24 +88,24 @@
   --font-sans: "Pretendard Variable", "Pretendard", -apple-system, system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   --font-display: "Pretendard Variable", "Pretendard", -apple-system, system-ui, sans-serif;
   --font-display-en: "Space Grotesk", "Pretendard Variable", "Pretendard", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-mono: "Pretendard Variable", "Pretendard", -apple-system, system-ui, sans-serif;
 }
 
 [data-theme="dark"] {
-  --bg:           var(--ocean-950);
-  --bg-elev:      var(--ocean-900);
+  --bg:           var(--blue-950);
+  --bg-elev:      var(--blue-900);
   --bg-sunken:    oklch(10% 0.035 244);
-  --bg-muted:     var(--ocean-800);
+  --bg-muted:     var(--blue-800);
   --fg:           var(--slate-50);
   --fg-muted:     var(--slate-300);
   --fg-subtle:    var(--slate-400);
   --fg-inverse:   var(--slate-950);
   --border:       oklch(30% 0.04 240 / 0.6);
   --border-strong: oklch(42% 0.06 240);
-  --primary:      var(--ocean-400);
-  --primary-hover: var(--ocean-300);
+  --primary:      var(--blue-400);
+  --primary-hover: var(--blue-300);
   --primary-soft: oklch(25% 0.08 240);
-  --primary-fg:   var(--ocean-950);
+  --primary-fg:   var(--blue-950);
   --ring:         oklch(68% 0.11 230 / 0.45);
   --shadow-sm:    0 1px 2px #0006;
   --shadow-md:    0 6px 18px #0008, 0 1px 3px #0006;

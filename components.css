@@ -162,10 +162,10 @@
 
 /* ───── Section shell ───── */
 .section { padding: var(--s-24) 0; position: relative; }
-.section__header { margin-bottom: var(--s-16); max-width: 900px; }
+.section__header { margin-bottom: var(--s-8); max-width: 900px; }
 .section__header .eyebrow { display: block; margin-bottom: var(--s-4); }
 .section__title {
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(32px, 5vw, 48px);
   line-height: 1.05; margin: 0;
 }
 .italic {
@@ -249,7 +249,7 @@
 .proj-list::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
 .proj-list__head {
   display: grid;
-  grid-template-columns: 24px 1.6fr 1fr 1fr 1.3fr;
+  grid-template-columns: 24px 1.6fr 1fr 1fr 1.3fr 72px; 
   gap: 16px; padding: 10px 4px 10px 4px;
   font-size: 10px; opacity: .45; letter-spacing: .14em;
   position: sticky; top: 0; background: var(--bg-elev); z-index: 1;
@@ -259,7 +259,7 @@
 .proj-list__body { list-style: none; padding: 0; margin: 0; }
 .proj-row {
   display: grid;
-  grid-template-columns: 24px 1.6fr 1fr 1fr 1.3fr;
+  grid-template-columns:24px 1.6fr 1fr 1fr 1.3fr 72px; 
   gap: 16px; align-items: center;
   padding: 14px 4px; border-bottom: 1px solid var(--border);
   transition: background .2s;
@@ -352,7 +352,7 @@
   .bento__card--hero, .bento__card--projects, .bento__card--principles,
   .bento__card--stat, .bento__card--tools { grid-column: span 2; grid-row: auto; }
   .toolkit-grid { grid-template-columns: 1fr; }
-  .proj-list__head, .proj-row { grid-template-columns: 20px 1.5fr 1fr; }
+  .proj-list__head, .proj-row { grid-template-columns:  24px 1.6fr 1fr 1fr 1.3fr 80px;}
   .proj-row__date { display: none; }
   .proj-row__tools { display: none; }
   .proj-list__head > span:nth-child(3), .proj-list__head > span:nth-child(5) { display: none; }
@@ -1070,8 +1070,8 @@
 }
 .contact__title { font-size: clamp(40px, 6vw, 80px); margin: 8px 0 12px; position: relative; }
 .contact__title em { font-style: italic; opacity: .75; font-family: "Times New Roman", serif; font-weight: 400; }
-.contact__sub { font-size: 18px; opacity: .8; max-width: 540px; margin: 0 0 var(--s-8); position: relative; }
-.contact__email { position: relative; margin-bottom: var(--s-8); }
+.contact__sub { font-size: 16px; opacity: .8; max-width: 540px; margin:var(--s-4) 0 var(--s-8); position: relative; }
+.contact__email { position: relative;  }
 .contact__email-btn {
   display: flex; align-items: center; gap: 14px;
   padding: 18px 24px;

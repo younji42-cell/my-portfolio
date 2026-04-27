@@ -100,8 +100,8 @@ function App() {
   const navSections = [
     { id: 'about', label: 'About', num: '01' },
     { id: 'process', label: 'Process', num: '02' },
-    { id: 'project-navy', label: 'Navy', num: '03' },
-    { id: 'project-vibe', label: 'Mood.log', num: '04' },
+    { id: 'project-navy', label: 'Project', num: '03' },
+    { id: 'project-vibe', label: 'Vibe APP', num: '04' },
     { id: 'playground', label: 'System', num: '05' },
     { id: 'contact', label: 'Contact', num: '07' },
   ];
