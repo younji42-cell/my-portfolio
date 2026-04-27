@@ -5,20 +5,20 @@ function About() {
   const [modalProject, setModalProject] = React.useState(null);
 
   const PROJECTS = [
-    { name: "해군 기상입력 플랫폼", date: "2026.02 — 진행중", role: "UI/UX · 디자인시스템 · 퍼블리싱", tools: "Figma · Tailwind · HTML" , contribution: 90  ,link: null, images: ["./assets/navymain.png"],},
-    { name: "해군 통합해양정보시스템 · 제안", date: "2026.01", role: "UI/UX · 디자인시스템 ", tools: "Figma" , contribution: 90  ,link: null, images:  ["./assets/dash04.png","./assets/dash02.png","./assets/dash03.png"],},
-    { name: "연인 관계 개선 앱 (개인 - 바이브코딩)", date: "2026.02 — 진행중", role: "기획 · UI · 개발", tools: "React · Claude · Supabase ", contribution: 100 ,link: null, images: ["./assets/app-all.png"]},
-    { name: "기상청 품질관리 시스템", date: "2025.04", role: "UI UX  디자인 · 퍼블리싱", tools: "Figma · HTML/CSS", contribution: 100 ,link: null, images: ["./assets/dash01.png"],},
-    { name: "날씨 여행 앱 기획", date: "2025.03", role: "UX 기획", tools: "Figma", contribution: 90 ,images: ["./assets/weather_01.png"],},
-    { name: "HanamonEDB System", date: "2025.06", role: "UX 설계· UI 리뉴얼", tools: "Figma", contribution: 100 ,link: null, images: ["./assets/EDB01.png","./assets/EDB02.png","./assets/EDB04.png","./assets/EDB03.png","./assets/EDB05.png","./assets/EDB06.png"]},
-    { name: "세종시티 앱", date: "2023.03", role: "UI UX 디자인", tools: "Figma · Protopie", contribution: 100 ,link: null, images: ["./assets/CITYAPP.png"]},
+    { name: "해군 기상입력 플랫폼", date: "2026.02 — 진행중", role: "UI/UX · 디자인시스템 · 퍼블리싱", tools: "Figma · Tailwind · HTML" , contribution: 90  ,link: null, images: ["/my-portfolio/assets/navymain.png"],},
+    { name: "해군 통합해양정보시스템 · 제안", date: "2026.01", role: "UI/UX · 디자인시스템 ", tools: "Figma" , contribution: 90  ,link: null, images:  ["/my-portfolio/assets/dash04.png","/my-portfolio/assets/dash02.png","/my-portfolio/assets/dash03.png"],},
+    { name: "연인 관계 개선 앱 (개인 - 바이브코딩)", date: "2026.02 — 진행중", role: "기획 · UI · 개발", tools: "React · Claude · Supabase ", contribution: 100 ,link: null, images: ["/my-portfolio/assets/app-all.png"]},
+    { name: "기상청 품질관리 시스템", date: "2025.04", role: "UI UX  디자인 · 퍼블리싱", tools: "Figma · HTML/CSS", contribution: 100 ,link: null, images: ["/my-portfolio/assets/dash01.png"],},
+    { name: "날씨 여행 앱 기획", date: "2025.03", role: "UX 기획", tools: "Figma", contribution: 90 ,images: ["/my-portfolio/assets/weather_01.png"],},
+    { name: "HanamonEDB System", date: "2025.06", role: "UX 설계· UI 리뉴얼", tools: "Figma", contribution: 100 ,link: null, images: ["/my-portfolio/assets/EDB01.png","/my-portfolio/assets/EDB02.png","/my-portfolio/assets/EDB04.png","/my-portfolio/assets/EDB03.png","/my-portfolio/assets/EDB05.png","/my-portfolio/assets/EDB06.png"]},
+    { name: "세종시티 앱", date: "2023.03", role: "UI UX 디자인", tools: "Figma · Protopie", contribution: 100 ,link: null, images: ["/my-portfolio/assets/CITYAPP.png"]},
     { name: "새만금 개발공사 ", date: "2023.02", role: "UI UX 디자인", tools: "XD · Photoshop · Illustrator", contribution: 100,link:"https://www.sdco.or.kr/", images: null, },
     { name: "친환경에너지체험포털 · 인터랙티브 ", date: "2023.10", role: "UI UX 디자인 · 프로토타입", tools: "XD · Photoshop · Illustrator", contribution: 100,link:"https://xd.adobe.com/view/d3b6def9-24dc-43e0-a187-5c512e8a6fdb-86e5/?fullscreen", images: null, },
     { name: "한국노동연구원", date: "2023.03", role: " UI UX 디자인", tools: "XD", contribution: 100 ,link: "https://www.kli.re.kr/#firstPage"},
-    { name: "KT&G 시스템", date: "2022.10", role: "UI UX 디자인", tools: "XD", contribution: 100 ,images: [,"./assets/kt&gsystem.png","./assets/kt&gsystemsub.png"]},
+    { name: "KT&G 시스템", date: "2022.10", role: "UI UX 디자인", tools: "XD", contribution: 100 ,images: [,"/my-portfolio/assets/kt&gsystem.png","/my-portfolio/assets/kt&gsystemsub.png"]},
     { name: "기술정책플랫폼 · 미세먼지에서 살아남기", date: "2022.07", role: "UI UX 디자인", tools: "XD · Photoshop · Illustrator", contribution: 100 ,link: "https://www.kier.re.kr/tpp/energy/B/view/228?contentsName=dust&menuId=MENU00961#", },
     { name: "기술정책플랫폼 · 식탁위의 혁명", date: "2022.07", role: "UI UX 디자인", tools: "XD · Photoshop · Illustrator", contribution: 100 ,link: "https://www.kier.re.kr/tpp/energy/A/view/25?contentsName=sub3_9&menuId=MENU00963",},
-    { name: "국방과학연구소 · 안전상황판", date: "2022.02", role: "UI UX 디자인", tools: "XD", contribution: 100 ,images: ["./assets/gosystem.png"]},
+    { name: "국방과학연구소 · 안전상황판", date: "2022.02", role: "UI UX 디자인", tools: "XD", contribution: 100 ,images: ["/my-portfolio/assets/gosystem.png"]},
   ];
 
   const TOOLKIT = [
