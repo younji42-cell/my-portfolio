@@ -543,13 +543,13 @@ function TabDevelop() {
       label: 'WF-01',
       title: '그래프 뷰 — 의사결정 & 비교 시각화',
       desc: '입력값·모델값·AI 권장값을 레이어로 겹쳐 비교. 이상 구간은 배경 하이라이트로 주의 환기.',
-      img: '/assets/navy-wire01.png',
+      img: '/my-portfolio/assets/navy-wire01.png',
     },
     {
       label: 'WF-02',
       title: '테이블 뷰 — 수치 입력 & 이상값 표시',
       desc: '24시간 전체 흐름을 테이블로 조망하면서 이상값을 즉시 하이라이팅. 셀 우측 미니 그래프로 시계열 흐름 인라인 표시.',
-      img: '/assets/navy-wire02.png',
+      img: '/my-portfolio/assets/navy-wire02.png',
     },
   ];
 
@@ -695,12 +695,12 @@ const modalRoot = typeof document !== 'undefined' ? document.body : null;
     {
       label: 'SCREEN 01',
       title: '그래프 뷰 — 시각화 & 의사결정',
-      img:  '/assets/navymain.png'
+      img:  '/my-portfolio/assets/navymain.png'
     },
     {
       label: 'SCREEN 02',
       title: '테이블 뷰 — 수치 입력 & 이상값 탐지',
-      img: '/assets/Main-2.png'
+      img: '/my-portfolio/assets/Main-2.png'
     },
   ];
 
@@ -1045,7 +1045,7 @@ function ProjectNavy() {
         해군 기상입력 플랫폼
       </h2>
       <div className="mono" style={{ color: 'var(--fg-subtle)', fontSize: 12, letterSpacing: '.04em' }}>
-        NAVAL WEATHER INPUT PLATFORM · 2025—2026 · UX Research → UI Design → Dev
+        NAVY WEATHER INPUT PLATFORM · 2025—2026 · UX Research → UI Design → Dev
       </div>
     </div>
   </div>

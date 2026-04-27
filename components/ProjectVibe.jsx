@@ -8,7 +8,7 @@ function ConnectDiscover() {
   const FINDINGS = [
     {
       num: 'F1',
-      title: '나는 말하고 싶은데 방법을 모른다',
+      title: '말하고 싶은데 방법을 모르겠어요',
       color: 'oklch(58% 0.20 25)',
       colorSoft: 'oklch(58% 0.20 25 / .08)',
       desc: '대다수의 인터뷰 참가자는 배우자에게 하고 싶은 말이 있지만, 상처를 줄까 봐, 싸움이 될까 봐, 어떻게 시작해야 할지 몰라서 말을 삼킵니다. 이는 관계 만족도를 급격히 낮추는 핵심 패턴입니다.',
@@ -17,7 +17,7 @@ function ConnectDiscover() {
     },
     {
       num: 'F2',
-      title: '남자는 상담 안 가',
+      title: '남편은 상담가는걸 꺼려하는 것 같아요',
       color: 'oklch(54% 0.15 232)',
       colorSoft: 'oklch(54% 0.15 232 / .08)',
       desc: '여성 참가자의 71%가 전문 상담을 원하지만 배우자의 반대로 포기한 경험이 있었습니다. 남성 참가자들은 상담에 대한 저항감의 이유로 자존심, 실패 인정, 시간 낭비를 꼽았습니다.',
@@ -27,7 +27,7 @@ function ConnectDiscover() {
     },
     {
       num: 'F3',
-      title: '작은 인정이 큰 차이를 만든다',
+      title: '작은 인정이 큰 차이를 만드는 것 같아요',
       color: 'oklch(62% 0.18 145)',
       colorSoft: 'oklch(62% 0.18 145 / .08)',
       desc: '행복한 부부로 분류된 참가자들의 공통점은 감사 표현, 작은 칭찬, 스킨십의 일상화였습니다. 이들은 의식적으로 노력하고 있었으며, 이런 행동을 루틴화하는 데 도움이 필요하다고 했습니다.',
@@ -657,10 +657,10 @@ function ConnectDeliver() {
         <div className="eyebrow" style={{ marginBottom: 12 }}>App Screenshots · 핸드폰 구동 화면</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
           {[
-              { label: '온보딩', src: '/assets/vibeapp05.png' },  // 예: src: '/assets/connect-onboarding.png'
-              { label: '홈',     src: '/assets/vibeapp01.png' },
-              { label: '감정카드',   src: '/assets/vibeapp07.png'  },
-              { label: '리포트', src: '/assets/vibeapp03.png'  },
+              { label: '온보딩', src: '/my-portfolio/assets/vibeapp05.png' },  // 예: src: '/my-portfolio/assets/connect-onboarding.png'
+              { label: '홈',     src: '/my-portfolio/assets/vibeapp01.png' },
+              { label: '감정카드',   src: '/my-portfolio/assets/vibeapp07.png'  },
+              { label: '리포트', src: '/my-portfolio/assets/vibeapp03.png'  },
             ].map((screen, i) => (
               <div key={i} style={{ background: 'var(--bg-elev)', border: '1px solid var(--border)', borderRadius: 'var(--r-xl)', overflow: 'hidden' }}>
                 <div style={{ aspectRatio: '9/19.5', background: 'var(--bg-sunken)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
