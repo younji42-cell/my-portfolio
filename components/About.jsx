@@ -33,9 +33,9 @@ const PROJECTS = [
     images: [
       {
         src: "/my-portfolio/assets/dash04.png",
-        needs: "복잡한 해양 데이터를 한 화면에서 직관적으로 파악하고 싶다",
-        improvement: "정보 그룹핑과 시각적 계층 구조 재설계로 핵심 지표 우선 노출",
-        result: "대시보드 한 화면에서 핵심 현황을 즉시 인지할 수 있는 구조 완성",
+        needs: "GIS 기반 기상 요소를 지도 위에서 직관적으로 비교하고 한눈에 파악하고 싶다",
+        improvement: "윈드라이다 등 요소별 레이어를 대시보드 형태로 시각화, 지도 위 데이터 오버레이 UI 설계",
+        result: "기상 요소별 비교가 가능한 GIS 대시보드 UI/UX 완성",
       },
       { src: "/my-portfolio/assets/dash02.png" },
       { src: "/my-portfolio/assets/dash03.png" },
@@ -67,9 +67,9 @@ const PROJECTS = [
     images: [
       {
         src: "/my-portfolio/assets/dash01.png",
-        needs: "기상 데이터 품질 이상을 빠르게 감지하고 담당자에게 알리고 싶다",
-        improvement: "이상 항목 우선 노출 및 상태별 색상 분류 시스템 설계",
-        result: "관리자가 이상값을 즉시 파악하고 조치할 수 있는 UI 완성",
+        needs: "기상청 내부에서 특수 기상 현상(호우·폭염·열대야 등)을 빠르게 파악하고 기간·지역별로 비교하고 싶다",
+        improvement: "특수 기상 항목별 데이터를 대시보드로 구조화, 기간·지역 필터 기반 통계 시각화 UI 설계",
+        result: "상시 기상 이상 현상을 한눈에 확인하고 조건별로 분석 가능한 내부용 대시보드 완성",
       },
     ],
   },
@@ -83,9 +83,9 @@ const PROJECTS = [
     images: [
       {
         src: "/my-portfolio/assets/weather_01.png",
-        needs: "날씨에 맞는 여행지를 쉽게 찾고 일정을 계획하고 싶다",
-        improvement: "날씨 데이터와 여행지 추천을 연동한 UX 플로우 설계",
-        result: "날씨 기반 여행 추천 앱 UX 기획 완료",
+        needs: "날씨에 맞는 여행지를 따로 검색하지 않아도 한 앱에서 추천받고, 여행 기간 날씨도 실시간으로 확인하고 싶다",
+        improvement: "날씨 데이터와 여행지 추천 연동, 시즌별 큐레이션(벚꽃·해수욕장 등), 등록한 여행 일정에 실시간 날씨 업데이트 및 의상 추천 기능 UX 설계",
+        result: "날씨·여행·스타일링을 하나로 연결한 생활 밀착형 서비스 기획 제안 완성",
       },
     ],
   },
@@ -120,9 +120,9 @@ const PROJECTS = [
     images: [
       {
         src: "/my-portfolio/assets/CITYAPP.png",
-        needs: "세종시 시민이 도시 정보를 앱 하나로 편리하게 이용하고 싶다",
-        improvement: "핵심 서비스 중심의 홈 구조 및 직관적인 네비게이션 설계",
-        result: "시민 친화적인 도시 앱 UI/UX 완성",
+        needs: "세종시 시민이 도시 정보 확인, 정책 제안, 지역화폐 사용까지 앱 하나로 해결하고 싶다",
+        improvement: "도시 정보·정책 제안·포인트 적립·지역화폐 연동을 하나의 앱으로 통합한 거버넌스 UX 설계",
+        result: "시민 참여형 스마트시티 앱 UI/UX 완성 — 생활 서비스부터 도시 거버넌스까지 한 앱에서 처리 가능",
       },
     ],
   },
