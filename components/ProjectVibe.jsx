@@ -37,12 +37,12 @@ function ConnectDiscover() {
   ];
 
   const AFFINITY = [
-    { emoji: '💬', theme: '감정 표현의 어려움',   count: 73, color: 'oklch(58% 0.20 25)',  notes: ['감정 어휘 부족', '표현 방법을 모름', '표현 후 역효과 경험', '감정 억압의 패턴화'] },
-    { emoji: '🏠', theme: '일상 공유의 단절',      count: 58, color: 'oklch(70% 0.15 65)',  notes: ['각자 스마트폰만 봄', '대화 없는 저녁', '취미의 분리', '함께하는 시간 부족'] },
-    { emoji: '⚖️', theme: '역할 분담 갈등',       count: 52, color: 'oklch(66% 0.16 285)', notes: ['가사 인식 차이', '육아 부담 불균형', '기여도 인정 부재', '고마움을 표현 못 함'] },
-    { emoji: '💰', theme: '경제적 투명성',         count: 44, color: 'oklch(75% 0.16 75)',  notes: ['소비 스타일 충돌', '재정 계획 공유 부재', '비밀 지출 발각', '미래 목표 불일치'] },
-    { emoji: '🔒', theme: '프라이버시 & 신뢰',    count: 44, color: 'oklch(54% 0.15 232)', notes: ['데이터 저장 불안', '배우자 공개 여부 고민', '전문가 연결 신뢰 문제', '익명성 보장 요구'] },
-    { emoji: '🌱', theme: '성장 욕구',             count: 41, color: 'oklch(62% 0.18 145)', notes: ['좋은 배우자가 되고 싶음', '관계를 배우고 싶음', '함께 성장하고픈 욕구', '예방적 관계 케어 원함'] },
+    { emoji: '💬', theme: '감정 표현의 어려움',   count: 15, color: 'oklch(58% 0.20 25)',  notes: ['감정 어휘 부족', '표현 방법을 모름', '표현 후 역효과 경험', '감정 억압의 패턴화'] },
+    { emoji: '🏠', theme: '일상 공유의 단절',      count: 10, color: 'oklch(70% 0.15 65)',  notes: ['각자 스마트폰만 봄', '대화 없는 저녁', '취미의 분리', '함께하는 시간 부족'] },
+    { emoji: '⚖️', theme: '역할 분담 갈등',       count: 8, color: 'oklch(66% 0.16 285)', notes: ['가사 인식 차이', '육아 부담 불균형', '기여도 인정 부재', '고마움을 표현 못 함'] },
+    { emoji: '💰', theme: '경제적 투명성',         count: 10, color: 'oklch(75% 0.16 75)',  notes: ['소비 스타일 충돌', '재정 계획 공유 부재', '비밀 지출 발각', '미래 목표 불일치'] },
+    { emoji: '🔒', theme: '프라이버시 & 신뢰',    count: 16, color: 'oklch(54% 0.15 232)', notes: ['데이터 저장 불안', '배우자 공개 여부 고민', '전문가 연결 신뢰 문제', '익명성 보장 요구'] },
+    { emoji: '🌱', theme: '성장 욕구',             count: 8, color: 'oklch(62% 0.18 145)', notes: ['좋은 배우자가 되고 싶음', '관계를 배우고 싶음', '함께 성장하고픈 욕구', '예방적 관계 케어 원함'] },
   ];
 
   const [selectedFinding, setSelectedFinding] = React.useState(0);
