@@ -3,23 +3,208 @@
 function About() {
   const [hover, setHover] = React.useState(null);
   const [modalProject, setModalProject] = React.useState(null);
+// About.jsx — PROJECTS 데이터 교체
 
-  const PROJECTS = [
-    { name: "해군 기상입력 플랫폼", date: "2026.02 — 진행중", role: "UI/UX · 디자인시스템 · 퍼블리싱", tools: "Figma · Tailwind · HTML" , contribution: 90  ,link: null, images: ["/my-portfolio/assets/navymain.png"],},
-    { name: "해군 통합해양정보시스템 · 제안", date: "2026.01", role: "UI/UX · 디자인시스템 ", tools: "Figma" , contribution: 90  ,link: null, images:  ["/my-portfolio/assets/dash04.png","/my-portfolio/assets/dash02.png","/my-portfolio/assets/dash03.png"],},
-    { name: "연인 관계 개선 앱 (개인 - 바이브코딩)", date: "2026.02 — 진행중", role: "기획 · UI · 개발", tools: "React · Claude · Supabase ", contribution: 100 ,link: null, images: ["/my-portfolio/assets/app-all.png"]},
-    { name: "기상청 품질관리 시스템", date: "2025.04", role: "UI UX  디자인 · 퍼블리싱", tools: "Figma · HTML/CSS", contribution: 100 ,link: null, images: ["/my-portfolio/assets/dash01.png"],},
-    { name: "날씨 여행 앱 기획", date: "2025.03", role: "UX 기획", tools: "Figma", contribution: 90 ,images: ["/my-portfolio/assets/weather_01.png"],},
-    { name: "HanamonEDB System", date: "2025.06", role: "UX 설계· UI 리뉴얼", tools: "Figma", contribution: 100 ,link: null, images: ["/my-portfolio/assets/EDB01.png","/my-portfolio/assets/EDB02.png","/my-portfolio/assets/EDB04.png","/my-portfolio/assets/EDB03.png","/my-portfolio/assets/EDB05.png","/my-portfolio/assets/EDB06.png"]},
-    { name: "세종시티 앱", date: "2023.03", role: "UI UX 디자인", tools: "Figma · Protopie", contribution: 100 ,link: null, images: ["/my-portfolio/assets/CITYAPP.png"]},
-    { name: "새만금 개발공사 ", date: "2023.02", role: "UI UX 디자인", tools: "XD · Photoshop · Illustrator", contribution: 100,link:"https://www.sdco.or.kr/", images: null, },
-    { name: "친환경에너지체험포털 · 인터랙티브 ", date: "2023.10", role: "UI UX 디자인 · 프로토타입", tools: "XD · Photoshop · Illustrator", contribution: 100,link:"https://xd.adobe.com/view/d3b6def9-24dc-43e0-a187-5c512e8a6fdb-86e5/?fullscreen", images: null, },
-    { name: "한국노동연구원", date: "2023.03", role: " UI UX 디자인", tools: "XD", contribution: 100 ,link: "https://www.kli.re.kr/#firstPage"},
-    { name: "KT&G 시스템", date: "2022.10", role: "UI UX 디자인", tools: "XD", contribution: 100 ,images: [,"/my-portfolio/assets/kt&gsystem.png","/my-portfolio/assets/kt&gsystemsub.png"]},
-    { name: "기술정책플랫폼 · 미세먼지에서 살아남기", date: "2022.07", role: "UI UX 디자인", tools: "XD · Photoshop · Illustrator", contribution: 100 ,link: "https://www.kier.re.kr/tpp/energy/B/view/228?contentsName=dust&menuId=MENU00961#", },
-    { name: "기술정책플랫폼 · 식탁위의 혁명", date: "2022.07", role: "UI UX 디자인", tools: "XD · Photoshop · Illustrator", contribution: 100 ,link: "https://www.kier.re.kr/tpp/energy/A/view/25?contentsName=sub3_9&menuId=MENU00963",},
-    { name: "국방과학연구소 · 안전상황판", date: "2022.02", role: "UI UX 디자인", tools: "XD", contribution: 100 ,images: ["/my-portfolio/assets/gosystem.png"]},
-  ];
+const PROJECTS = [
+  {
+    name: "해군 기상입력 플랫폼",
+    date: "2026.02 — 진행중",
+    role: "UX/UI 디자인 · 퍼블리싱",
+    tools: "Figma · Tailwind · HTML",
+    contribution: 90,
+    link: null,
+    images: [
+      {
+        src: "/my-portfolio/assets/navymain.png",
+        needs: "24시간 데이터를 한눈에 비교하고 이상값을 즉시 파악하고 싶다",
+        improvement: "시계열 흐름을 미니 그래프로 인라인 표시, 이상값 즉시 하이라이팅",
+        result: "화면 전환 없이 전체 흐름 파악 및 오입력 즉시 감지 가능",
+      },
+      { src: "/my-portfolio/assets/Main-2.png" },
+    ],
+  },
+  {
+    name: "해군 통합해양정보시스템 · 제안",
+    date: "2026.01",
+    role: "UX/UI 디자인",
+    tools: "Figma",
+    contribution: 90,
+    link: null,
+    images: [
+      {
+        src: "/my-portfolio/assets/dash04.png",
+        needs: "복잡한 해양 데이터를 한 화면에서 직관적으로 파악하고 싶다",
+        improvement: "정보 그룹핑과 시각적 계층 구조 재설계로 핵심 지표 우선 노출",
+        result: "대시보드 한 화면에서 핵심 현황을 즉시 인지할 수 있는 구조 완성",
+      },
+      { src: "/my-portfolio/assets/dash02.png" },
+      { src: "/my-portfolio/assets/dash03.png" },
+    ],
+  },
+  {
+    name: "연인 관계 개선 앱 (개인 · 바이브코딩)",
+    date: "2026.02 — 진행중",
+    role: "UX기획 · 개발",
+    tools: "React · Claude · Supabase",
+    contribution: 100,
+    link: null,
+    images: [
+      {
+        src: "/my-portfolio/assets/app-all.png",
+        needs: "배우자에게 감정을 전달하고 싶지만 방법을 모르겠다",
+        improvement: "5분 미션·감정 카드·스트릭 시스템으로 부담 없는 관계 트레이닝 설계",
+        result: "Expo React Native 기반 앱 직접 구현, 핸드폰 구동 완료",
+      },
+    ],
+  },
+  {
+    name: "기상청 품질관리 시스템",
+    date: "2025.04",
+    role: "UX/UI 디자인 · 퍼블리싱",
+    tools: "Figma · HTML/CSS",
+    contribution: 100,
+    link: null,
+    images: [
+      {
+        src: "/my-portfolio/assets/dash01.png",
+        needs: "기상 데이터 품질 이상을 빠르게 감지하고 담당자에게 알리고 싶다",
+        improvement: "이상 항목 우선 노출 및 상태별 색상 분류 시스템 설계",
+        result: "관리자가 이상값을 즉시 파악하고 조치할 수 있는 UI 완성",
+      },
+    ],
+  },
+  {
+    name: "날씨 여행 앱 기획",
+    date: "2025.03",
+    role: "UX기획",
+    tools: "Figma",
+    contribution: 90,
+    link: null,
+    images: [
+      {
+        src: "/my-portfolio/assets/weather_01.png",
+        needs: "날씨에 맞는 여행지를 쉽게 찾고 일정을 계획하고 싶다",
+        improvement: "날씨 데이터와 여행지 추천을 연동한 UX 플로우 설계",
+        result: "날씨 기반 여행 추천 앱 UX 기획 완료",
+      },
+    ],
+  },
+  {
+    name: "HanamonEDB System",
+    date: "2025.06",
+    role: "UX/UI 디자인",
+    tools: "Figma",
+    contribution: 100,
+    link: null,
+    images: [
+      {
+        src: "/my-portfolio/assets/EDB01.png",
+        needs: "복잡한 EDB 시스템을 직관적으로 사용할 수 있도록 개선하고 싶다",
+        improvement: "정보 구조 재설계 및 주요 액션 중심의 UI 리뉴얼",
+        result: "사용자 업무 흐름에 맞는 화면 구조 및 컴포넌트 시스템 완성",
+      },
+      { src: "/my-portfolio/assets/EDB02.png" },
+      { src: "/my-portfolio/assets/EDB04.png" },
+      { src: "/my-portfolio/assets/EDB03.png" },
+      { src: "/my-portfolio/assets/EDB05.png" },
+      { src: "/my-portfolio/assets/EDB06.png" },
+    ],
+  },
+  {
+    name: "세종시티 앱",
+    date: "2023.03",
+    role: "UX/UI 디자인",
+    tools: "Figma · Protopie",
+    contribution: 100,
+    link: null,
+    images: [
+      {
+        src: "/my-portfolio/assets/CITYAPP.png",
+        needs: "세종시 시민이 도시 정보를 앱 하나로 편리하게 이용하고 싶다",
+        improvement: "핵심 서비스 중심의 홈 구조 및 직관적인 네비게이션 설계",
+        result: "시민 친화적인 도시 앱 UI/UX 완성",
+      },
+    ],
+  },
+  {
+    name: "새만금 개발공사",
+    date: "2023.02",
+    role: "UX/UI 디자인",
+    tools: "XD · Photoshop · Illustrator",
+    contribution: 100,
+    link: "https://www.sdco.or.kr/",
+    images: null,
+  },
+  {
+    name: "친환경에너지체험포털 · 인터랙티브",
+    date: "2023.10",
+    role: "UX/UI 디자인",
+    tools: "XD · Photoshop · Illustrator",
+    contribution: 100,
+    link: "https://xd.adobe.com/view/d3b6def9-24dc-43e0-a187-5c512e8a6fdb-86e5/?fullscreen",
+    images: null,
+  },
+  {
+    name: "한국노동연구원",
+    date: "2023.03",
+    role: "UX/UI 디자인",
+    tools: "XD",
+    contribution: 100,
+    link: "https://www.kli.re.kr/#firstPage",
+    images: null,
+  },
+  {
+    name: "KT&G 시스템",
+    date: "2022.10",
+    role: "UX/UI 디자인",
+    tools: "XD",
+    contribution: 100,
+    link: null,
+    images: [
+      {
+        src: "/my-portfolio/assets/kt&gsystem.png",
+        needs: "사내 시스템을 더 직관적으로 사용할 수 있도록 개선이 필요하다",
+        improvement: "복잡한 메뉴 구조 단순화 및 주요 기능 접근성 향상",
+        result: "업무 효율을 높이는 UI 리뉴얼 완성",
+      },
+      { src: "/my-portfolio/assets/kt&gsystemsub.png" },
+    ],
+  },
+  {
+    name: "기술정책플랫폼 · 미세먼지에서 살아남기",
+    date: "2022.07",
+    role: "UX/UI 디자인",
+    tools: "XD · Photoshop · Illustrator",
+    contribution: 100,
+    link: "https://www.kier.re.kr/tpp/energy/B/view/228?contentsName=dust&menuId=MENU00961#",
+    images: null,
+  },
+  {
+    name: "기술정책플랫폼 · 식탁위의 혁명",
+    date: "2022.07",
+    role: "UX/UI 디자인",
+    tools: "XD · Photoshop · Illustrator",
+    contribution: 100,
+    link: "https://www.kier.re.kr/tpp/energy/A/view/25?contentsName=sub3_9&menuId=MENU00963",
+    images: null,
+  },
+  {
+    name: "국방과학연구소 · 안전상황판",
+    date: "2022.02",
+    role: "UX/UI 디자인",
+    tools: "XD",
+    contribution: 100,
+    link: null,
+    images: [
+      {
+        src: "/my-portfolio/assets/gosystem.png",
+        needs: "실시간 안전 상황을 한눈에 파악하고 빠르게 대응하고 싶다",
+        improvement: "상황별 우선순위 시각화 및 긴급 알림 UI 설계",
+        result: "실시간 상황 인지와 빠른 의사결정을 돕는 상황판 UI 완성",
+      },
+    ],
+  },
+];
 
   const TOOLKIT = [
     { name: "Figma",      cat: "Design",  level: 95, desc: "컴포넌트 · 베리언트 · Auto Layout · 토큰" },
@@ -38,67 +223,67 @@ function About() {
   }, []);
  
   /* ── 프로젝트 액션 버튼 ── */
-  function ProjectActions({ project }) {
-    const hasLink   = !!project.link;
-    const hasImages = project.images && project.images.length > 0;
+function ProjectActions({ project }) {
+  const hasLink   = !!project.link;
+  const hasImages = project.images && project.images.length > 0;
  
-    if (!hasLink && !hasImages) return null;
+  if (!hasLink && !hasImages) return null;
  
-    return (
-      <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-        {hasLink && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={e => e.stopPropagation()}
-            title="링크 바로가기"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: 4,
-              padding: '4px 8px',
-              background: 'var(--primary-soft)', color: 'var(--primary)',
-              border: '1px solid var(--primary)',
-              borderRadius: 'var(--r-pill)', fontSize: 10,
-              fontFamily: 'inherit', cursor: 'pointer',
-              textDecoration: 'none', transition: 'all .15s',
-              letterSpacing: '.04em', fontWeight: 500,
-            }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = '#fff'; }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'var(--primary-soft)'; e.currentTarget.style.color = 'var(--primary)'; }}
-          >
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-              <path d="M2 8L8 2M8 2H4M8 2V6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
-            </svg>
-            링크
-          </a>
-        )}
-        {hasImages && (
-          <button
-            onClick={e => { e.stopPropagation(); setModalProject(project); }}
-            title="이미지 보기"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: 4,
-              padding: '4px 8px',
-              background: 'var(--bg-muted)', color: 'var(--fg-muted)',
-              border: '1px solid var(--border)',
-              borderRadius: 'var(--r-pill)', fontSize: 10,
-              fontFamily: 'inherit', cursor: 'pointer',
-              transition: 'all .15s', letterSpacing: '.04em', fontWeight: 500,
-            }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-elev)'; e.currentTarget.style.borderColor = 'var(--border-strong)'; e.currentTarget.style.color = 'var(--fg)'; }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-muted)'; e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--fg-muted)'; }}
-          >
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-              <rect x="1" y="1" width="8" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
-              <circle cx="3.5" cy="3.5" r="1" fill="currentColor" opacity=".5"/>
-              <path d="M1 7l2.5-2.5L5 6l2-2 2 2.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            이미지
-          </button>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+      {hasLink && (
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={e => e.stopPropagation()}
+          title="링크 바로가기"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 4,
+            padding: '4px 8px',
+            background: 'var(--primary-soft)', color: 'var(--primary)',
+            border: '1px solid var(--primary)',
+            borderRadius: 'var(--r-pill)', fontSize: 10,
+            fontFamily: 'inherit', cursor: 'pointer',
+            textDecoration: 'none', transition: 'all .15s',
+            letterSpacing: '.04em', fontWeight: 500,
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'var(--primary)'; e.currentTarget.style.color = '#fff'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'var(--primary-soft)'; e.currentTarget.style.color = 'var(--primary)'; }}
+        >
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 8L8 2M8 2H4M8 2V6" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+          </svg>
+          링크
+        </a>
+      )}
+      {hasImages && (
+        <button
+          onClick={e => { e.stopPropagation(); setModalProject(project); }}
+          title="이미지 보기"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 4,
+            padding: '4px 8px',
+            background: 'var(--bg-muted)', color: 'var(--fg-muted)',
+            border: '1px solid var(--border)',
+            borderRadius: 'var(--r-pill)', fontSize: 10,
+            fontFamily: 'inherit', cursor: 'pointer',
+            transition: 'all .15s', letterSpacing: '.04em', fontWeight: 500,
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'var(--bg-elev)'; e.currentTarget.style.borderColor = 'var(--border-strong)'; e.currentTarget.style.color = 'var(--fg)'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'var(--bg-muted)'; e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--fg-muted)'; }}
+        >
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <rect x="1" y="1" width="8" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
+            <circle cx="3.5" cy="3.5" r="1" fill="currentColor" opacity=".5"/>
+            <path d="M1 7l2.5-2.5L5 6l2-2 2 2.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          이미지
+        </button>
+      )}
+    </div>
+  );
+}
  
   return (
     <section id="about" className="section about">
@@ -127,8 +312,8 @@ function About() {
               그리고 이 경험은 자연스럽게 <strong>서비스에 머무는 시간으로 증명됩니다.</strong><br />
               <span className="bento__lead-break"/>
               저는 이 <strong style={{color:'var(--primary)'}}>'존중의 경험'</strong>을 설계하기 위해<br />
-              기획자의 시선으로 UX의 흐름을 관찰하고, 디자이너의 감각으로 디자인 시스템을 정의하고,<br />
-              설계한 인터페이스를 직접 직접 HTML과 CSS로 구현합니다.<br />
+              기획자의 시선으로 UX의 흐름을 관찰하고, 디자이너의 감각으로 디자인 시스템을 정의하며,<br />
+              퍼블리셔의 손으로 직접 화면에 구현합니다<br />
               기획의 본질이 한 줄의 코드까지 왜곡 없이 이어질 때,<br />
               비로소 <strong>사용자를 향한 진심 어린 배려</strong>가 완성된다고 확신합니다.
             </p>
@@ -304,35 +489,82 @@ function About() {
             <div style={{
               overflowY: 'scroll',
               flex: 1,
-              padding: '24px',
+              minHeight: 0,
               display: 'flex',
               flexDirection: 'column',
-              gap: 16,
-              minHeight: 0,   
             }}>
-              {modalProject.images && modalProject.images.length > 0 ? (
-                modalProject.images.map((src, idx) => (
-                  <div key={idx} style={{ width: '100%', border: '1px solid var(--border)' }}>
-                    <img
-                      src={src}
-                      alt={`${modalProject.name} ${idx + 1}`}
-                      style={{ width: '100%', display: 'block' }}
-                    />
+              {/* 메타 정보 — 전체 상단 딱 하나 */}
+              {modalProject.images && modalProject.images.length > 0 && (() => {
+                const first = modalProject.images[0];
+                const metas = [
+                  { label: '사용자 니즈', value: first.needs       },
+                  { label: '개선 방향',   value: first.improvement },
+                  { label: '결과',        value: first.result      },
+                ].filter(m => m.value);
+                return metas.length > 0 ? (
+                  <div style={{
+                    padding: '16px 24px',
+                    borderBottom: '1px solid var(--border)',
+                    display: 'flex', flexDirection: 'column', gap: 10,
+                    flexShrink: 0,
+                  }}>
+                    {metas.map((item, i) => (
+                      <div key={i} style={{
+                        display: 'flex', gap: 14, alignItems: 'flex-start',
+                        paddingTop: i > 0 ? 10 : 0,
+                        borderTop: i > 0 ? '1px solid var(--border)' : 'none',
+                        marginTop: i > 0 ? 0 : 0,
+                      }}>
+                        <span className="mono" style={{
+                          fontSize: 9, color: 'var(--fg-subtle)',
+                          letterSpacing: '.1em', fontWeight: 600,
+                          minWidth: 72, paddingTop: 3, flexShrink: 0,
+                        }}>
+                          {item.label.toUpperCase()}
+                        </span>
+                        <p style={{ fontSize: 13, color: 'var(--fg)', lineHeight: 1.7, margin: 0 }}>
+                          {item.value}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                ))
-              ) : (
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 300, gap: 12, color: 'var(--fg-subtle)' }}>
-                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                    <rect x="3" y="3" width="34" height="34" rx="5" stroke="currentColor" strokeWidth="1" strokeDasharray="4 2"/>
-                    <rect x="9" y="10" width="22" height="4" rx="2" fill="currentColor" opacity=".25"/>
-                    <rect x="9" y="18" width="15" height="3" rx="1.5" fill="currentColor" opacity=".18"/>
-                    <rect x="9" y="24" width="18" height="3" rx="1.5" fill="currentColor" opacity=".18"/>
-                  </svg>
-                  <span className="mono" style={{ fontSize: 12, letterSpacing: '.1em', opacity: .5 }}>이미지 준비 중</span>
-                </div>
-              )}
+                ) : null;
+              })()}
+
+              {/* 이미지 목록 */}
+              <div style={{
+                padding: '24px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 16,
+              }}>
+                {modalProject.images && modalProject.images.length > 0 ? (
+                  modalProject.images.map((img, idx) => (
+                    <div key={idx} style={{
+                      width: '100%',
+                      border: '1px solid var(--border)',
+                      borderRadius: 'var(--r-lg)',
+                    }}>
+                      <img
+                        src={img.src}
+                        alt={`${modalProject.name} ${idx + 1}`}
+                        style={{ width: '100%', display: 'block' }}
+                      />
+                    </div>
+                  ))
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 300, gap: 12, color: 'var(--fg-subtle)' }}>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                      <rect x="3" y="3" width="34" height="34" rx="5" stroke="currentColor" strokeWidth="1" strokeDasharray="4 2"/>
+                      <rect x="9" y="10" width="22" height="4" rx="2" fill="currentColor" opacity=".25"/>
+                      <rect x="9" y="18" width="15" height="3" rx="1.5" fill="currentColor" opacity=".18"/>
+                      <rect x="9" y="24" width="18" height="3" rx="1.5" fill="currentColor" opacity=".18"/>
+                    </svg>
+                    <span className="mono" style={{ fontSize: 12, letterSpacing: '.1em', opacity: .5 }}>이미지 준비 중</span>
+                  </div>
+                )}
+              </div>
             </div>
- 
             {/* 모달 푸터 */}
             <div style={{
               padding: '12px 24px',

@@ -1,4 +1,4 @@
-// components/Hero.jsx — 메인 히어로 섹션
+// components/Hero.jsx- 메인 히어로 섹션
 
 function Hero() {
   const [mouse, setMouse] = React.useState({ x: 0.5, y: 0.5 });

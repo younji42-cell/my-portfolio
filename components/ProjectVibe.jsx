@@ -317,7 +317,7 @@ function ConnectDefine() {
             ))}
           </div>
 
-          {/* 하루 일과 — 이지현만 */}
+          {/* 하루 일과- 이지현만 */}
           {persona.day.length > 0 && (
             <div style={{ padding: '0 24px 20px' }}>
               <div className="eyebrow" style={{ marginBottom: 10 }}>Day in the Life</div>
@@ -335,7 +335,7 @@ function ConnectDefine() {
         </div>
       </div>
 
-      {/* 공감 지도 — 이지현만 */}
+      {/* 공감 지도- 이지현만 */}
       {activePersona === 0 && persona.empathy && (
         <div>
           <div className="eyebrow" style={{ marginBottom: 12 }}>이지현 공감 지도 · Empathy Map</div>
@@ -728,7 +728,7 @@ function ProjectVibe() {
 
         {/* 헤더 */}
         <div className="section__header" data-reveal>
-          <span className="eyebrow">04 — Featured Project</span>
+          <span className="eyebrow">04- Featured Project</span>
           <div style={{ marginTop: 'var(--s-4)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
               <span style={{ padding: '4px 10px', background: 'var(--primary)', color: '#fff', borderRadius: 'var(--r-pill)', fontSize: 10, fontWeight: 600, letterSpacing: '.08em' }}>PROJECT</span>

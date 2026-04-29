@@ -1,7 +1,7 @@
 // components/ProjectNavy.jsx
 
 /* ─────────────────────────────────────────────────
-   탭 1 · Discover — 현장 인터뷰 + 현황분석
+   탭 1 · Discover- 현장 인터뷰 + 현황분석
 ───────────────────────────────────────────────── */
 
 function TabDiscover() {
@@ -223,7 +223,7 @@ function TabDiscover() {
 }
 
 /* ─────────────────────────────────────────────────
-   탭 2 · Define — 어피니티 + 여정 지도
+   탭 2 · Define- 어피니티 + 여정 지도
 ───────────────────────────────────────────────── */
 
 // ProjectNavy.jsx 안의 TabDefine 함수만 아래로 교체하세요
@@ -252,7 +252,7 @@ function TabDefine() {
       theme: '디바이스 제약',
       color: 'oklch(54% 0.15 232)',
       notes: [
-        { text: '새벽 6시·저녁 7시 매일 입력 — 항상 PC 사용 불가' },
+        { text: '새벽 6시·저녁 7시 매일 입력- 항상 PC 사용 불가' },
         { text: '작은 화면(모바일·태블릿)에서 입력 매우 어려움' },
       ],
     },
@@ -435,32 +435,47 @@ function TabDefine() {
                 </div>
               ))}
             </div>
+           <div style={{ marginTop: 8, position: 'relative', height: 60, marginLeft: 90}}>
+              {(() => {
+                const W = 1090, H = 60;
+                const total = STAGES.length;
+                const colW = W / total;
+                const points = STAGES.map((s, i) => ({
+                  xPct: (colW * i + colW / 2) / W * 100,
+                  yPct: (H - (s.emotion / 4) * (H - 10) - 5) / H * 100,
+                  xPx: colW * i + colW / 2,
+                  yPx: H - (s.emotion / 4) * (H - 10) - 5,
+                }));
+                const d = points.map((p, i) =>
+                  i === 0 ? `M${p.xPx},${p.yPx}` : `L${p.xPx},${p.yPx}`
+                ).join(' ');
 
-            {/* 감정 흐름 SVG */}
-            <div style={{ padding: '0 44px', marginTop: -4 }}>
-              <svg width="100%" height="48" style={{ overflow: 'visible' }}>
-                {(() => {
-                  const colW = 100 / STAGES.length;
-                  const points = STAGES.map((s, i) => ({
-                    x: colW * i + colW / 2,
-                    y: 40 - s.emotion * 8,
-                  }));
-                  const d = points.map((p, i) =>
-                    i === 0 ? `M${p.x}%,${p.y}` : `L${p.x}%,${p.y}`
-                  ).join(' ');
-                  return (
-                    <>
-                      <path d={d} fill="none" stroke="var(--primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity=".5"/>
-                      {points.map((p, i) => (
-                        <circle key={i} cx={`${p.x}%`} cy={p.y} r="3" fill="var(--primary)" opacity=".7"/>
-                      ))}
-                    </>
-                  );
-                })()}
-              </svg>
+                return (
+                  <>
+                    <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H}
+                      preserveAspectRatio="none"
+                      style={{ display: 'block', position: 'absolute', top: 0, left: 0, right: 0, width: '100%' }}>
+                      <path d={d} fill="none" stroke="var(--primary)"
+                        strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" opacity=".6"/>
+                    </svg>
+                    {points.map((p, i) => (
+                      <div key={i} style={{
+                        position: 'absolute',
+                        left: `${p.xPct}%`,
+                        top: `${p.yPct}%`,
+                        transform: 'translate(-50%, -50%)',
+                        width: 10, height: 10,
+                        borderRadius: '50%',
+                        background: 'var(--primary)',
+                        opacity: .8,
+                        zIndex: 1,
+                      }} />
+                    ))}
+                  </>
+                );
+              })()}
             </div>
-
-          </div>
+            </div>
         </div>
 
         {/* 인사이트 */}
@@ -483,7 +498,7 @@ function TabDefine() {
 }
 
 /* ─────────────────────────────────────────────────
-   탭 3 · Develop — 와이어프레임
+   탭 3 · Develop- 와이어프레임
 ───────────────────────────────────────────────── */
 
 // ProjectNavy.jsx 안의 TabDevelop 함수만 아래로 교체하세요
@@ -509,7 +524,7 @@ function TabDevelop() {
       colorSoft: 'oklch(58% 0.20 25 / .08)',
       desc: '모든 오류를 즉시 표시하면 작업 흐름을 방해합니다. 오류 유형에 따라 개입 시점을 분리해 사용자 부담을 최소화했습니다.',
       points: [
-        { label: '치명적 오류',   text: '입력 즉시 표시 — 범위 초과, 물리 불가 값', dim: false },
+        { label: '치명적 오류',   text: '입력 즉시 표시- 범위 초과, 물리 불가 값', dim: false },
         { label: '논리적 모순',   text: '저장 시점에 통합 리스트 제공', dim: false },
         { label: '패턴 이상',     text: '시각적 하이라이팅으로 주의 환기', dim: false },
       ],
@@ -532,7 +547,7 @@ function TabDevelop() {
       colorSoft: 'oklch(70% 0.15 65 / .08)',
       desc: '흩어진 기상 변수를 날씨·기온·바람·파랑 등 의미 단위로 그룹핑해 탭 형태로 정리합니다. 연관 변수를 한 화면에서 함께 보여 상관관계를 직관적으로 파악할 수 있습니다.',
       points: [
-        { label: '변수 그룹', text: '날씨 / 기온 / 바람 / 파랑 / 클라우드 — 탭으로 분리', dim: false },
+        { label: '변수 그룹', text: '날씨 / 기온 / 바람 / 파랑 / 클라우드 - 탭으로 분리', dim: false },
         { label: '연관 배치', text: '바람-파도처럼 인과관계 있는 변수를 인접 배치', dim: false },
       ],
     },
@@ -541,13 +556,13 @@ function TabDevelop() {
   const WIREFRAMES = [
     {
       label: 'WF-01',
-      title: '그래프 뷰 — 의사결정 & 비교 시각화',
+      title: '그래프 뷰- 의사결정 & 비교 시각화',
       desc: '입력값·모델값·AI 권장값을 레이어로 겹쳐 비교. 이상 구간은 배경 하이라이트로 주의 환기.',
       img: '/my-portfolio/assets/navy-wire01.png',
     },
     {
       label: 'WF-02',
-      title: '테이블 뷰 — 수치 입력 & 이상값 표시',
+      title: '테이블 뷰- 수치 입력 & 이상값 표시',
       desc: '24시간 전체 흐름을 테이블로 조망하면서 이상값을 즉시 하이라이팅. 셀 우측 미니 그래프로 시계열 흐름 인라인 표시.',
       img: '/my-portfolio/assets/navy-wire02.png',
     },
@@ -684,7 +699,7 @@ function TabDevelop() {
 }
 
 /* ─────────────────────────────────────────────────
-   탭 4 · Deliver — 디자인 + 결과
+   탭 4 · Deliver- 디자인 + 결과
 ───────────────────────────────────────────────── */
 
 function TabDeliver() {
@@ -694,12 +709,12 @@ const modalRoot = typeof document !== 'undefined' ? document.body : null;
   const DESIGNS = [
     {
       label: 'SCREEN 01',
-      title: '그래프 뷰 — 시각화 & 의사결정',
+      title: '그래프 뷰- 시각화 & 의사결정',
       img:  '/my-portfolio/assets/navymain.png'
     },
     {
       label: 'SCREEN 02',
-      title: '테이블 뷰 — 수치 입력 & 이상값 탐지',
+      title: '테이블 뷰- 수치 입력 & 이상값 탐지',
       img: '/my-portfolio/assets/Main-2.png'
     },
   ];
@@ -733,7 +748,7 @@ const modalRoot = typeof document !== 'undefined' ? document.body : null;
     },
     {
       label: '시계열 파악',
-      before: '숫자만 나열된 셀 — 흐름 파악 불가',
+      before: '숫자만 나열된 셀- 흐름 파악 불가',
       after: '미니 그래프로 흐름 인라인 확인',
     },
   ];
@@ -912,7 +927,7 @@ const modalRoot = typeof document !== 'undefined' ? document.body : null;
                 "{fb.quote}"
               </p>
               <span className="mono" style={{ fontSize: 10, color: 'var(--fg-subtle)', letterSpacing: '.1em' }}>
-                — {fb.who}
+               - {fb.who}
               </span>
             </div>
           ))}
@@ -1007,7 +1022,7 @@ const modalRoot = typeof document !== 'undefined' ? document.body : null;
 }
 
 /* ─────────────────────────────────────────────────
-   탭 배열 — 최상단 선언
+   탭 배열- 최상단 선언
 ───────────────────────────────────────────────── */
 
 const NAVY_TABS = [
@@ -1018,7 +1033,7 @@ const NAVY_TABS = [
 ];
 
 /* ─────────────────────────────────────────────────
-   ProjectNavy — 메인
+   ProjectNavy- 메인
 ───────────────────────────────────────────────── */
 
 function ProjectNavy() {
@@ -1029,7 +1044,7 @@ function ProjectNavy() {
       <div className="container">
 {/* 헤더 */}
 <div className="section__header" data-reveal>
-  <span className="eyebrow">03 — Featured Project</span>
+  <span className="eyebrow">03- Featured Project</span>
   <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 'var(--s-6)', flexWrap: 'wrap', marginTop: 'var(--s-4)' }}>
     <div>
       {/* 프로젝트 컨텍스트 */}
@@ -1051,7 +1066,7 @@ function ProjectNavy() {
   </div>
 </div>
 
-{/* 탭 — 순서도 스타일 */}
+{/* 탭- 순서도 스타일 */}
 <div data-reveal data-delay="1" style={{ marginBottom: 'var(--s-4)', marginTop: 'var(--s-6)' }}>
   <div style={{ display: 'flex', alignItems: 'center' }}>
     {NAVY_TABS.map((tab, i) => (
@@ -1111,7 +1126,7 @@ function ProjectNavy() {
     ))}
   </div>
 </div>
-        {/* 콘텐츠 — display:none으로 state 유지 */}
+        {/* 콘텐츠- display:none으로 state 유지 */}
         <div data-reveal data-delay="2" style={{ background: 'var(--bg-elev)', border: '1px solid var(--border)', borderRadius: 'var(--r-xl)', padding: 'var(--s-8)', minHeight: 480 }}>
           {NAVY_TABS.map((tab, i) => (
             <div key={i} style={{ display: active === i ? 'block' : 'none' }}>

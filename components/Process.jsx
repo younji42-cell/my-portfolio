@@ -46,7 +46,7 @@ function Process() {
       title: '퍼블리싱',
       subtitle: 'Development',
       desc: 'HTML/CSS로 직접 구현합니다. 디자인 의도가 코드 단계에서 절대 흐려지지 않도록, 설계부터 배포까지 한 사람의 손으로 이어집니다.',
-      deliverables: ['HTML / CSS', '인터랙션', '접근성', '배포'],
+      deliverables: ['HTML / CSS', '인터랙션', '접근성'],
       images: [
       ],
       color: 'oklch(70% 0.15 65)',
@@ -63,7 +63,7 @@ function Process() {
           <span className="eyebrow">02 — Process</span>
           <h2 className="section__title display">
             <em className="italic">One flow, four crafts.</em><br/>
-            <span>기획부터 배포까지,<br/>끊기지 않는 한 사람의 손.</span>
+            <span>기획부터 구현까지,<br/>끊기지 않는 한 사람의 손.</span>
           </h2>
         </div>
 
