@@ -976,7 +976,7 @@ const modalRoot = typeof document !== 'undefined' ? document.body : null;
             style={{
               background: 'var(--bg-elev)', borderRadius: 'var(--r-xl)',
               border: '1px solid var(--border)',
-              width: '100%', maxWidth: 1100,
+              width: '100%', maxWidth: 1400,
               overflow: 'hidden',
               boxShadow: 'var(--shadow-lg)',
             }}
